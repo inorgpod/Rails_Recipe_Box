@@ -1,11 +1,11 @@
 class RecipesController < ApplicationController
   before_action :find_recipe,  only: [:show, :edit, :update, :destroy]
   def index 
-    @recipe = Recipe.all
+    @recipe = Recipe.all.order('created_at DESC' )
   end
 
   def show 
-    @recipe = Recipe.find.params([:id])
+
   end
   
   def new 
@@ -22,6 +22,22 @@ class RecipesController < ApplicationController
     end
   end
 
+  def edit 
+
+  end
+
+  def update 
+    if @recipe.update(recipe_params)
+      redirect_to @recipe 
+    else 
+      render 'edit'
+    end
+  end
+
+  def destroy 
+    @recipt 
+    redirect_to root_path, notice: 'Successfully deleted recipe'
+  end
 
 
   private 
