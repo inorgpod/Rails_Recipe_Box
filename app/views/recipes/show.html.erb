@@ -1,4 +1,4 @@
-<%= image_tag @recipe.image if @recipe.image.attached?%>
+<%= image_tag @recipe.image.variant(resize_to_limit: [300,300]) if @recipe.image.attached?%>
 <h1><%= @recipe.title%></h1>
 <p><%= @recipe.description%></p>
 

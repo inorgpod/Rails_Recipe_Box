@@ -50,4 +50,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
   end
 
+  def image 
+  end
+
 end
