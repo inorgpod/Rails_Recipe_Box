@@ -1,15 +1,14 @@
 
   <div class=row >
+          <% @recipe.each do |recipe| %>
     <div class=col-md-4 >
       <div class=recipe >
         <div class=image_wrapper>
-<% @recipe.each do |recipe| %>
-
           <%= image_tag(recipe.image.variant(resize_to_limit: [300,300])) if recipe.image.attached? %>
 
           <h2> <%= link_to recipe.title, recipe %> </h2>
-<%end%>
         </div>
       </div>
     </div>
+<%end%> 
   </div>
